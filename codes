@@ -1,0 +1,346 @@
+#crack the interviews
+import  pandas as pd
+
+class logesh():
+    #program 1
+    def prime(self):
+        a = int(input("enter the starting value:"))
+        b = int(input("enter the ending value:"))
+        print("the range between",a,"and",b)
+        for i in range(a,b+1):
+            if(i>1):
+                for j in range(2,int(i**0.5)+1):
+                    if(i%j==0):
+                        break;
+                else:
+                    print(i)
+
+
+    #program 2
+    def factorial(self):
+        num=int(input("enter the number:"))
+        sum=1
+        for i in range(1,num+1):
+            sum=sum*i
+        print(sum)
+
+
+
+
+    #program 3
+    def palindrome(self):
+        words=input("enter the words:")
+        rev=words[::-1]
+        print(words,"==",rev)
+        if(words==rev):
+            print("its a palindrome:")
+        else:
+            print("X-its not a plaindrome")
+
+
+    #program 4
+    def factor(self):
+        num=int(input("enter the number:"))
+        for i in range(1,num+1):
+            if(num%i==0):
+                print(i)
+
+
+
+    #program 5
+    def leapyear(self):
+        num=int(input("enter the year:"))
+        if(num%4==0 and num%100!=0) or (num%400==0):
+            print(num,"is a leap year")
+        else:
+            print("X-not a leap year")
+
+
+    #program 6
+    def fibnacci(self):
+        num=int(input("enter the number:"))
+        a,b=0,1
+        print(f"fibnacci series for {num} is:")
+        print(a,b,end=" ")
+        for i in range(num-2):
+            c=a+b
+            a,b=b,c
+            print(c,end=" ")
+
+
+
+
+    #program 7
+    def find_second_max_no(self):
+        str_input=input("enter your array by space:")
+        seperate=str_input.split()
+        arr=[int(item) for item in seperate]
+
+        print(f"your array is : {arr}")
+        condition1=arr.remove(max(arr))
+        need=arr
+        print(f"second largest number is :{max(need)} ")
+
+
+    #program 8
+    def amstrong(self):
+        num=int(input("enter the number:"))
+        change=str(num)
+        lenght=len(change)
+        sum=0
+        temp=num
+        while(temp>0):
+            digit=temp%10
+            sum=sum+digit**lenght
+            temp=temp//10
+        if(num==sum):
+            print(f"{num} is a amstrong number")
+        else:
+            print("not a amstrongnumber")
+
+
+    #program 9
+    def alternative(self):
+        condition=input(" enter even odd or even:")
+        if(condition=="odd"):
+            for i in range(1,20,4):
+                print(i)
+        elif(condition=="even"):
+            for j in range(2,20,4):
+                print(j)
+
+
+    #program 10
+    def reverse_words(self):
+        words=input("enter the words:")
+        change=words.split()
+        rev=[word[::-1] for word in change]
+        result=' '.join(rev)
+        print(result)
+
+
+
+
+print("There are 10 importan programs in this code")
+print("***********************************************************************************************************************************************************************************")
+programs={"s/no":"programs",
+          "------":"-------------",
+          1:"prime numbers",
+          2:"factorial of a number",
+          3:"palindrome",
+          4:"factor of a number",
+          5:"find leap year",
+          6:"fibnacci series",
+          7:"find secound largest number in array",
+          8:"amstrong number",
+          9:"alternative odd and even",
+          10:"reverse a words"}
+
+value=pd.Series(programs)
+print(value)
+
+
+print("**************************************************************************************************************************************************************************")
+print("which program do you need to test")
+
+see=logesh()
+test=int(input("enter the s/no of the program:"))
+print("*****************************************************************************************************************************************************************************")
+
+if(test==1):
+    print("prime number")
+    see.prime()
+    view1=input("do you want to see the source code yes or on:")
+    if(view1=="yes"):
+        v1='''
+        a = int(input("enter the starting value:"))
+        b = int(input("enter the ending value:"))
+        print(f"the range between{a,"and",b}")
+        for i in range(a,b+1):
+            if(i>1):
+                for j in range(2,int(i**0.5)+1):
+                    if(i%j==0):
+                        break;
+                else:
+                    print(i)
+            '''
+        print(v1)
+    else:
+        print("okey thanks!")
+
+elif(test==2):
+    print("factorial")
+    see.factorial()
+    view2=input("do you want to see the source code yes or on:")
+    if(view2=="yes"):
+        v2='''
+        num=int(input("enter the number:"))
+        sum=1
+        for i in range(1,num+1):
+            sum=sum*i
+        print(sum)
+
+            '''
+        print(v2)
+    else:
+        print("okey thanks!")
+
+elif(test==3):
+    print("palindrome")
+    see.palindrome()
+    view3 = input("do you want to see the source code yes or on:")
+    if (view3 == "yes"):
+        v3 = '''
+        words=input("enter the words:")
+        rev=words[::-1]
+        print(words,"==",rev)
+        if(words==rev):
+            print("its a palindrome:")
+        else:
+            print("X-its not a plaindrome")
+
+                '''
+        print(v3)
+    else:
+        print("okey thanks!")
+elif(test==4):
+    print("factor of a number")
+    see.factor()
+    view4 = input("do you want to see the source code yes or on:")
+    if (view4 == "yes"):
+        v4 = '''
+        num=int(input("enter the number:"))
+        for i in range(1,num+1):
+            if(num%i==0):
+                print(i)
+
+            '''
+        print(v4)
+    else:
+        print("okey thanks!")
+elif(test==5):
+    print("find leap year")
+    see.leapyear()
+    view5 = input("do you want to see the source code yes or on:")
+    if (view5 == "yes"):
+        v5 = '''
+        num=int(input("enter the year:"))
+        if(num%4==0 and num%100!=0) or (num%400==0):
+            print(num,"is a leap year")
+        else:
+            print("X-not a leap year")
+
+
+               '''
+        print(v5)
+    else:
+        print("okey thanks!")
+elif(test==6):
+    print("fibnacci series")
+    see.fibnacci()
+    view6 = input("do you want to see the source code yes or on:")
+    if (view6 == "yes"):
+        v6 = '''
+        num=int(input("enter the number:"))
+        a,b=0,1
+        print(f"fibnacci series for {num} is:")
+        print(a,b,end=" ")
+        for i in range(num-2):
+            c=a+b
+            a,b=b,c
+            print(c,end=" ")
+
+
+                '''
+        print(v6)
+    else:
+        print("okey thanks!")
+
+elif(test==7):
+    print("find secound largest number in array")
+    see.find_second_max_no()
+    view7 = input("do you want to see the source code yes or on:")
+    if (view7 == "yes"):
+        v7 = '''
+        str_input=input("enter your array by space:")
+        seperate=str_input.split()
+        arr=[int(item) for item in seperate]
+
+        print(f"your array is : {arr}")
+        condition1=arr.remove(max(arr))
+        need=arr
+        print(f"second largest number is :{max(need)} ")
+
+
+                '''
+        print(v7)
+    else:
+        print("okey thanks!")
+elif (test == 8):
+    print("amstrong number")
+    see.amstrong()
+    view8 = input("do you want to see the source code yes or on:")
+    if (view8 == "yes"):
+        v8 = '''
+        num=int(input("enter the number:"))
+        change=str(num)
+        lenght=len(change)
+        sum=0
+        temp=num
+        while(temp>0):
+            digit=temp%10
+            sum=sum+digit**lenght
+            temp=temp//10
+        if(num==sum):
+            print(f"{num} is a amstrong number")
+        else:
+            print("not a amstrongnumber")
+
+
+
+                '''
+        print(v8)
+    else:
+        print("okey thanks!")
+elif(test==9):
+    print("alternative odd or even")
+    see.alternative()
+    view9 = input("do you want to see the source code yes or on:")
+    if (view9 == "yes"):
+        v9 = '''
+        condition=input(" enter even odd or even:")
+        if(condition=="odd"):
+            for i in range(1,20,4):
+                print(i)
+        elif(condition=="even"):
+            for j in range(2,20,4):
+                print(j)
+
+                '''
+        print(v9)
+    else:
+        print("okey thanks!")
+elif(test==10):
+    print("reverse the words")
+    see.reverse_words()
+    view10 = input("do you want to see the source code yes or on:")
+    if (view10 == "yes"):
+        v10 = '''
+        words=input("enter the words:")
+        change=words.split()
+        rev=[word[::-1] for word in change]
+        result=' '.join(rev)
+        print(result)
+
+
+                '''
+        print(v10)
+    else:
+        print("okey thanks!")
+
+else:
+    print("kindly enter the valid input in the above table")
+
+print("******************************************************************************************************************************************************************************")
+print("developed by logesh!")
+print("Thanks!")
